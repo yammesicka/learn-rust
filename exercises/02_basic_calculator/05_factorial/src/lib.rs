@@ -10,6 +10,14 @@
 //
 // Use only what you learned! No loops yet, so you'll have to use recursion!
 
+fn factorial(number: u32) -> u32 {
+    // Rust won't do TCO, so.. :shrug:
+    if number <= 1 {
+        return 1
+    }
+    factorial(number - 1) * number
+}
+
 #[cfg(test)]
 mod tests {
     use crate::factorial;
